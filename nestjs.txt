@@ -1,0 +1,31 @@
+NEST JS
+
+Nestfactory.create() is used too create NEST application instance
+app.modules contains the implementation of the application root mdule
+app.controller.ts is the controller file
+app.servive.ts contains a basic service implementation
+app.controller.spec.ts:Testing for controller
+
+In the main.ts file we created the nestjs server with the help of nestjs/core library
+and AppModule from app.module file 
+which contains Appmodule with three three properties of Module decorator/library
+
+these properties are imports,controller and providers
+all three properties takes array of its kind like 
+controller take all the controller which should be part of app module
+provider : also know as service should be in this array
+
+
+
+app.controller.ts
+from the @nestjs/common library we import controller and Get
+we initialize controller like this
+@controller()
+export class AppController{
+constructor(private readonly appService: AppService) {}
+	@Get()
+	getHello(): string{
+		return this.appService.getHello();
+	}
+}
+
